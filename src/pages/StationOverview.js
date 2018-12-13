@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import StationList from '../components/StationList';
 
-const client_identifier = '2a66fa66c96ec34eceef21d20fd33c25'; //Change value to your client identifier available at https://developer.oslobysykkel.no/clients
+const client_identifier = 'your_key'; //Change value to your client identifier available at https://developer.oslobysykkel.no/clients
 
 /*
     - Fetches 2 datasets of stations.
