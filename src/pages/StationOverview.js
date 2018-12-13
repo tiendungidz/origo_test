@@ -26,7 +26,7 @@ class StationOverview extends Component {
         this.fetchStations(
             'http://localhost:33300/api/v1/stations',
             'http://localhost:33300/api/v1/stations/availability',
-             client_identifier + "a",
+             client_identifier,
              "id"
         )
 
