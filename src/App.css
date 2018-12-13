@@ -1,32 +1,75 @@
-.App {
-  text-align: center;
+/* ------------------------------------------------------------------------------------------------------------
+	App.js
+    Wrappers
+    Text
+------------------------------------------------------------------------------------------------------------ */
+.PageWrapper {
+	padding: 0;
+	margin: 0;
+	background: '#f2f2f2';
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.HeaderWrapper {
+	background: #3e3e3e;
+	height: 100px;
+	line-height: 100px;
+	width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.StationWrapper {
+	padding: 1em 1.5em;
 }
 
-.App-link {
-  color: #61dafb;
+.StationInfoWrapper {
+	background-color: #d3d3d3;
+	padding: 1em;
+	margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.FooterWrapper {
+	height: 100px;
+	width: 100%;
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  	text-align: center;
+}
+
+.Title {
+  	font-weight: 600;
+  	font-size: x-large;
+}
+
+.Bread {
+  	font-size: large;
+}
+
+.Divider {
+	border-bottom: 2px solid #3e3e3e;
+	margin-bottom: 40px;
+	margin-top: 10px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------
+    DefaultHeader.js
+------------------------------------------------------------------------------------------------------------ */
+.HeaderTitle {
+  	display: inline-block;
+  	padding-left: 1em;
+  	padding-right: 3em;
+}
+
+.HeaderItem {
+  	display: inline-block;
+  	padding: 0em 1em;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------
+    DefaultFooter.js
+------------------------------------------------------------------------------------------------------------ */
+.FooterTitle {
+  	width: 100%;
 }

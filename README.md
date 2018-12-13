@@ -1,44 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About this project
+This project is my solution to the assignment sent through e-mail.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+This README is written for Mac OS, and it assumes that you are familiar with the terminal.
 
-### `npm start`
+## Requirements
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Install Node.js runtime environment
+```
+https://nodejs.org/en/
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Getting started
 
-### `npm test`
+### Change the client identifier key
+Please navigate to the folder '/origo/src/pages', then open the file 'StationOverview.js'.
+```
+Change line '4' to include your client identifier key available for free at 'https://developer.oslobysykkel.no/clients'
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Run the backend
+In the terminal, please navigate to the folder 'origo_backend' located inside 'origo'(root folder).
+Then, run:
+```
+$ npm install
+```
+When finished, run:
+```
+$ npm start
+```
+The backend is a simple http proxy solution for redirecting requests to oslobysykkel.no.
+By doing this, no CORS related issues will hopefully be present while developing, or testing on different environments.
 
-### `npm run build`
+### Run the client
+In the terminal, please navigate to the folder 'origo'(root folder).
+then, run:
+```
+$ npm install
+```
+When finished, run:
+```
+$ npm start
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can now access the solution at 'http://localhost:3000'.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Dependencies
+The backend uses the following dependencies:
+```
+"cors": "^2.8.5",
+"express": "^4.16.4",
+"http-proxy-middleware": "^0.19.1"
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The client uses the following dependencies:
+```
+"react": "^16.6.3",
+"react-dom": "^16.6.3",
+"react-scripts": "2.1.1"
+```
