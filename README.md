@@ -21,7 +21,7 @@ Change line '4' to include your client identifier key available for free at 'htt
 ```
 
 ### Run the backend
-In the terminal, please navigate to the folder 'origo_backend' located inside 'origo'(root folder).
+In the terminal, please navigate to the folder 'origo/origo_backend'.
 Then, run:
 ```
 $ npm install
