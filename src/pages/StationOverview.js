@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import StationList from '../components/StationList';
 
-const client_identifier = 'your_key'; //Change value to your client identifier available at https://developer.oslobysykkel.no/clients
+const client_identifier = '6bcc9cb44d45d009ac4e48fc8589e4c1'; //Change value to your client identifier available at https://developer.oslobysykkel.no/clients
 
 /*
     - Fetches 2 datasets of stations.
@@ -23,7 +23,7 @@ class StationOverview extends Component {
 
     componentDidMount() {
         //Note that the endpoint(s) points to the express.js http proxy. Please refer to the README for more regarding the backend.
-        this.fetchStations(
+        this.tramLayRa(
             'http://localhost:33300/api/v1/stations',
             'http://localhost:33300/api/v1/stations/availability',
              client_identifier,
@@ -36,18 +36,18 @@ class StationOverview extends Component {
         Fetches 2 datasets (stations) from an api and combines them by key.
         When finished, it will also split the dataset into multiple datasets.
     */
-    fetchStations(endpoint1, endpoint2, clientIdentifier, key){
+    tramLayRa(endpoint1, endpoint2, clientIdentifier, key){
         var _this = this;
         Promise.all([
-            this.apiRequest(endpoint1, clientIdentifier),
-            this.apiRequest(endpoint2, clientIdentifier)
+            this.apiYeuCau(endpoint1, clientIdentifier),
+            this.apiYeuCau(endpoint2, clientIdentifier)
         ])
             .then(([response1, response2]) => Promise.all([response1.json(), response2.json()]))
             .then(([dataset1, dataset2]) =>
                 
                 this.setState({splitStations: 
-                    this.splitToChunks(
-                        this.combineDatasets(dataset2.stations, dataset1.stations, key), 25
+                    this.chiaChoChucks(
+                        this.gopData(dataset2.stations, dataset1.stations, key), 25
                     )
                 })
             )
@@ -57,7 +57,7 @@ class StationOverview extends Component {
             });
     }
     
-    apiRequest(endpoint, clientIdentifier){
+    apiYeuCau(endpoint, clientIdentifier){
         var config = {
             method: 'get',
             headers: {
@@ -85,11 +85,11 @@ class StationOverview extends Component {
         })
     }
 
-    combineDatasets(dataset1, dataset2, key) {
+    gopData(dataset1, dataset2, key) {
         var index = [];
         var result = [];
 
-        function filterByColumn (d1, d2) {
+        function chiaTheoCot (d1, d2) {
             return {
                 id: (d1 !== undefined) ? d1.id : null,
                 in_service: (d2 !== undefined) ? d2.in_service : null,
@@ -107,7 +107,7 @@ class StationOverview extends Component {
         for (var k = 0; k < dataset2.length; k++) {
             var y = dataset2[k];
             var x = index[y[key]];
-            result.push(filterByColumn(x, y));
+            result.push(chiaTheoCot(x, y));
         }
 
         return result;
@@ -123,7 +123,7 @@ class StationOverview extends Component {
         dataset: The dataset you want to split.
         splitSize: How big each dataset should be. The last set will contain less if there is not enough elements remaining.
     */
-    splitToChunks(dataset, splitSize){
+    chiaChoChucks(dataset, splitSize){
         var split = [];
         for (var i = 0; i < dataset.length; i++) {
             var last = split[split.length - 1];
@@ -136,7 +136,7 @@ class StationOverview extends Component {
     }
 
 
-    renderStationLists(dataset){
+    hienDsTram(dataset){
         if(dataset != null){
             var stations = [];
             for (var i = 0; i < dataset.length; i++) {
@@ -153,14 +153,18 @@ class StationOverview extends Component {
         return null;
     }
 
+    example(type1, type2) {
+        
+    }
+
     render() {
         return (
             <div className="StationWrapper">
-                <p className="Title">Stasjoner i Oslo</p>
+                <p className="Title">Cac tram tai Oslo</p>
                 <p className="Bread">{this.state.splitStations.length ? "" : this.state.topMessage }</p>
                 <p className="Bread">{this.state.topSubtitle }</p>
 
-                {this.renderStationLists(this.state.splitStations)}
+                {this.hienDsTram(this.state.splitStations)}
             </div>
         );
     }
