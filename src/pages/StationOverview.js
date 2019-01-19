@@ -39,8 +39,8 @@ class StationOverview extends Component {
     tramLayRa(endpoint1, endpoint2, clientIdentifier, key){
         var _this = this;
         Promise.all([
-            this.apiYeuCau(endpoint1, clientIdentifier),
-            this.apiYeuCau(endpoint2, clientIdentifier)
+            this.apiYeuCau(endpoint1, clientIdentifier),    //Thread 1
+            this.apiYeuCau(endpoint2, clientIdentifier)     //Thread 2
         ])
             .then(([response1, response2]) => Promise.all([response1.json(), response2.json()]))
             .then(([dataset1, dataset2]) =>

@@ -1,33 +1,32 @@
 import React, { Component } from 'react';
 
 
+
 class DefaultHeader extends Component {
+
 	constructor(props) {
-        super(props);
+		super(props); //initialize, ready
+		
 		this.state = { 
-            title: "Dung"
+			title: "Dung", //Variable #1
+			title2: "Duy", //Variable #2
+			title3: "Lan", //Variable #3
+			title4: "Dao",
+			title5: "Chien"
 		};
-		this.state = { 
-            items: "Dung"
-        };
 	}
 	
 	//Initialize
 	componentDidMount() {
 		this.changeName();
-	
-
+		this.changeName2("Thomas");
+		this.changeName3("Thanh Lan");
+		this.changeName4("Dao Tron");
+		this.changeName5("Le Chien")
 	}
-	changenameMenuitems1(){
-	
 
-
-	}
 	
-	
-	
-	changeName (){
-		
+	changeName (){	
 		var myVar1;
 		var myVar2;
 		var myVar3;
@@ -53,18 +52,84 @@ class DefaultHeader extends Component {
 		this.setState({items: myVar10 - myVar9})
 	
 	}
+
+	dangKyGoogle(){
+		//....
+		//....
+
+		var UsernameGoogle;
+		var PasswordGoogle;
+
+	}
+
+	dangKyFacebook(){
+		//....
+		//....
+
+		var UsernameFacebook;
+		var PasswordFacebook;
+
+	}
+
+	manualLogin(){
+		// ....
+		// ....
+
+		var Username;
+		var Password;
+
+	}
+
+	login(username, password){
+		this.setState({
+			title: username,
+			title2: username + "example",
+			title3: "aosdjas"
+		})
+	}
+
+	logout(){
+		//....
+	}
+
+	doiState(stateNao, stateMoi, stateNao2, stateMoi2){
+		stateNao = stateMoi;
+	}
+
+	changeName2(toName){
+		this.setState({
+			title2: toName,
+		})
+	}
+
+	changeName3(toName){
+		this.setState({
+			title3: toName
+		})
+	}
+	
+	changeName4(toName){
+		this.setState({
+			title4: toName
+		})
+	}
+
+	changeName5(toName){
+		this.setState({
+			title5: toName
+		})
+	}
 	
 	render() {
     	return (
         	<header className="HeaderWrapper">
             	<a className="HeaderTitle Title" href="/">{this.state.title}</a>
             	<a className="HeaderItem Bread" href="/stations">{this.state.items}</a>
-				<a className="HeaderItem Bread" href="/stations2">Xin Chao</a>
-            	<a className="HeaderItem Bread" href="/stations3">Xin Chao</a>
-				<a className="HeaderItem Bread" href="/stations4">Xin Chao</a>
-            	<a className="HeaderItem Bread" href="/stations5">Xin Chao</a>
-            	<a className="HeaderItem Bread" href="/stations6">Xin Chao</a>
-     	</header>
+				<a className="HeaderItem Bread" href="XinChao.js">{this.state.title2}</a>
+            	<a className="HeaderItem Bread" href="/stations3">{this.state.title3}</a>
+				<a className="HeaderItem Bread" href="/stations4">{this.state.title4}</a>
+            	<a className="HeaderItem Bread" href="/stations5">{this.state.title5}</a>
+     		</header>
     	);
   	}
 }

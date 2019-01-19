@@ -3,4 +3,49 @@
 3. git push
 
 
-==
+
+Database structure
+Database table
+
+Join
+
+Time complexity
+Algorithms
+
+
+
+Table #1
+Key     City    Temperature     Info
+----------------------------------------
+(1/2)a10       Oslo    -20             Noe         
+(2/2)a10       Bergen  -22             Something
+(3/2)a10       Bergen  -22             Something
+(4/2)a10       Bergen  -22             Something
+(5/2)a10       Bergen  -22             Something
+
+
+Table #2
+Key     Population      dia chi
+---------------------------------------
+4       028302830       sodfj3
+1       109239723       oasjd3
+3       309123892       djd9313
+2       201301202       o21uejo
+5       091028202       12oj31o2
+
+
+
+Multi-threading
+--------------------
+
+Core 1 (Thread 1) ----- Loi ra data ------- Loi ra data -------------
+Core 1 (Thread 2) ------------------ Dung data -------- Dung data ---
+
+
+Example 1
+Core 1 (Thread 1) ---- Dataset 1 --- Dataset 2 ---
+
+
+Example 2
+Core 1 (Thread 1) ---- Dataset 1 --
+Core 1 (Thread 2) ---- Dataset 2 --
